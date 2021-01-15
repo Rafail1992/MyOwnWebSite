@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pages>
+
+	<!--Page 1 ajax-->
+	
+	<page_1>
+		<instruction>This is a text area. The user can launch an XSS attack here by writing a script code. After you write down your script, just press the "Hack it button and check the message area for the result.  Its shows what you wrote in the text area. If your script code doesn't run, check help in the tips area. Remember, most web browsers protect you from javascript code execution.	
+		</instruction>
+		<tips>This is a text area. The user can insert here
+a javascript code to run a script.
+
+With javascript, someone can do different
+actions. For example, we can collect cookies
+from users. This is something we really
+don't want.
+
+All the new web browsers prevent the execution
+of a javascript. We can execute javascript 
+easily with an HTML button.
+        </tips>
+		<help>We can add a script with the help of a button.
+In this example, we will pop up a "Hacked"
+alert message.
+
+This can be done with only one line of code. Just add:
+		</help>
+		<alert>
+			In this page, there are many different types of exercises. You can choose them by clicking the left sidebar. In the middle, you can add your javascript code, to attack the vulnerable area. In the right sidebar, there are some tips to solve the exercise, and if you don't know the answer, click the Solution button at the top of the page.
+		</alert>
+		
+	</page_1>	
+<!-- Page 2 ajax-->	
+		
+	
+	
+	<page_2>
+		<instruction>In this exercise, you have to think of a way to prevent an XSS attack. Think of a change in the code which was given in the image, how could someone  filtering the special characters from the input text;
+		</instruction>
+		<tips>This is the code with which take the data from
+the text area. We add the inputs inside a header
+item so that we can see the result.
+
+The main problem is that someone can add special
+characters with the inputs, with this in mind,
+we must add some code to prevent an action like this.
+		</tips>
+		<help>To prevent XSS attack, we can use the replace
+method of javascript. All we have to do is to
+add in our code a new line.
+
+We the replay method, we can change all the
+special characters with space. The code we can
+add is followed:&lt;br&gt;
+&lt;span class = 'text_color_4 font-weight-bold'&gt;value = value.replace(/[&#38;\/\\#,+()$~%.'":*?&lt;&gt;{}]/g,' ');&lt;/span&gt;
+		</help>
+		
+		<alert>
+			In this page, there are many different types of exercises. You can choose them by clicking the left sidebar. In the middle, you can check the vulnerable code and try to find a solution. In the right sidebar, there are some tips to solve the exercise, and if you don't know the answer, click the Solution button at the top of the page.
+		</alert>
+	</page_2>
+	
+	<!--Page 0 ajax-->
+	
+	<page_0>
+		<instruction>Instructions
+		</instruction>
+		<tips>This the tips area for every exercise.
+		</tips>
+		<help>This is the Solution area. Check it
+if you don't know the answer.
+		</help>
+		<alert>This is the description area.
+		</alert>
+	</page_0>
+	
+	<!--Page 3 ajax-->
+	
+	<page_3>
+		<instruction>
+			This is a basic login form. The main goal of this exercise is the user to use this form to perform SQL injections. The user can insert a User ID and  Password in order to view the other profile information.  Add an SQL code to gain access to the database. To perform the attack you press the submit button after you add your code.
+		</instruction>
+		<tips>There are many different ways to perform an SQL
+Injection in a form. The user has to think about
+what is the SQL query which is used by the form.
+After that, it is easy to inject data to alter
+the output of the form.
+		</tips>
+		<help>To solve this exercise, the user needs to 
+insert a SQL code in the Password and User ID
+field. After that, all it needs is to press 
+the submit button. 
+			
+The SQL code is this:&lt;br&gt;
+&lt;span class = 'text_color_4 font-weight-bold'&gt;a' or 'a' = 'a&lt;/span&gt;
+		</help>
+		<alert>
+			In this page, there are many different types of exercises. You can choose them by clicking the left sidebar. In the middle, the user can perform an SQL Injection. In the right sidebar, there are some tips to solve the exercise, and if you don't know the answer, click the Solution button at the top of the page.
+		</alert>
+	</page_3>
+	
+	<!--Page 4 ajax-->
+	
+	<page_4>
+		<instruction>
+			In this exercise, the user has to change the code in the textbox in a way that an SQL injection will be impossible. The user can achieve that in different ways. For example, we can prevent an SQL injection, with the help of the function htmlspecialchars(). After the user made the changes, it is possible to compare the edited code with the default solution, by pressing the solution button on the top. The user can also try an SQL injection in the form at the bottom of the page. The form contains the secure PHP code.
+		</instruction>
+		<tips>
+			To solve this exercise, the user can use some PHP functions. One of them is the htmlspecialchars() which convert predefined characters like "&lt;" and "&gt;" to HTML entities. Of course, we can use PHP MySQL prepared statements to prevent an SQL injection. Those statements templates are not derived from external input. For this reason, it is impossible to inject SQL code. 
+		</tips>
+		<help>
+			To solve this exercise the user can add the htmlspecialchars() function to filter the inputs to the PHP file:
+&lt;br&gt;&lt;br&gt;
+ &lt;span class = "text_color_4"&gt;$user_id = htmlspecialchars($user_id);&lt;br&gt;
+ $psw     = htmlspecialchars($psw);&lt;/span&gt;&lt;br&gt;
+&lt;br&gt;
+We can also add PHP MySQL prepared statements:&lt;br&gt;
+&lt;br&gt;
+&lt;span class = "text_color_4"&gt;$query = "SELECT user_ID, name, surname, credit_card_ID FROM users WHERE user = ? AND psw = ? ";&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+//prepare the connection with the database&lt;br&gt;
+&lt;span class = "text_color_4"&gt;$stmt =  $conn -> prepare($query);&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+//add values to the prepared parameters&lt;br&gt;
+&lt;span class = "text_color_4"&gt;$stmt -> bind_param('ss',$user_id,$psw);&lt;br&gt;&lt;/span&gt;
+
+
+		</help>
+		<alert>
+			In this page, there are many different types of exercises. You can choose them by clicking the left sidebar. In the middle, the user can change the PHP code and make it more secure. In the right sidebar, there are some tips to solve the exercise, and if you don't know the answer, click the Solution button at the top of the page.
+		</alert>
+	</page_4>
+	
+	
+</pages>

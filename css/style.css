@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+a:hover{
+	color:whitesmoke;
+}
+
+body{
+	background-image: url("../items/programming-1873854_1920.png");
+}
+
+li{
+	list-style-type: none;
+}
+
+#navbar1,#navbar2{
+	border:5px solid;
+	color: goldenrod;
+}
+
+#xss_btn{
+	width:30%;
+}
+
+#list_one,#list_two,#list_zero,#list_three,#list_four{
+	border:1px solid white;
+}
+
+
+.item_color{
+	background-color:#212121;
+}
+.item_color_text{
+	background-color: ghostwhite;
+}
+ .text_color_1{
+	color:goldenrod;
+}
+.text_color_2{
+	color:skyblue;
+}
+
+.text_color_3{
+	color:yellowgreen;
+}
+
+.text_color_4{
+	color:mediumvioletred;
+}
+
+.item_shadow{
+	box-shadow: 15px 15px 10px black;
+}
+
+#page_three,#page_two_1,#page_two_2,#page_four_solution_2 {
+	border:1px solid;
+	
+}
+
