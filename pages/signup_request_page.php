@@ -26,6 +26,7 @@ if(empty($username) || empty($password) || empty($email) || empty($password_conf
 
 if($password != $password_confirm){
     header('location:../index.php');
+    $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'Different password!';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
     exit;
 }
 
