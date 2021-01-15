@@ -46,7 +46,7 @@ $query_1 = "SELECT userID  FROM Names where email = ?";
 //Prepare the connection to send the query
 $stmt_1 = $conn -> prepare($query_1);
 //Add the parameters
-$stmt_1 -> bind_param('s',$username);
+$stmt_1 -> bind_param('s',$email);
 //Execute the query
 $stmt_1 -> execute();
 //Store the data after the execution of the query
@@ -71,7 +71,7 @@ $query_2 = "SELECT userID  FROM Names where user = ?";
 //Prepare the connection to send the query
 $stmt_2 = $conn -> prepare($query_2);
 //Add the parameters
-$stmt_2 -> bind_param('s',$email);
+$stmt_2 -> bind_param('s',$username         );
 //Execute the query
 $stmt_2 -> execute();
 //Store the data after the execution of the query
@@ -84,7 +84,7 @@ $stmt_2 -> fetch();
 if($checker_2){
     //if it exist go back to the index file
     header("location:../index.php");
-    $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'This email already exists!';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
+    $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'This Username already exists!';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
     exit;
 }
 
