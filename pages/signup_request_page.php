@@ -37,31 +37,7 @@ if(mysqli_errno()){
     
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////Check duplication for email
-//Build the request 
-$query_1 = "SELECT userID  FROM Names where email = ?";
-//Prepare the connection to send the query
-$stmt_1 = $conn -> prepare($query_1);
-//Add the parameters
-$stmt_1 -> bind_param('s',$email);
-//Execute the query
-$stmt_1 -> execute();
-//Store the data after the execution of the query
-$stmt_1 -> store_result();
-//Restore the results and create a variable with the value
-$stmt_1 -> bind_result($checker_1);
-//Use the values with the fetch funcion
-$stmt_1 -> fetch();
-// check if the email exist
-if($checker_1){
-    //if it exist go back to the index file
-    header("location:../index.php");
-    $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'This email already exists!';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
-    exit;
-}
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //create a query
 //$query = "SELECT user_ID, name, surname, credit_card_ID FROM users WHERE user = '".$user_id."' AND psw = '".$psw."'";
