@@ -1,23 +1,19 @@
 // JavaScript Document
-
-	
-	//$("#pop_up_help").hide();
-	
-	/*$("#main_page_menu").on("click",function(){
-		
-		$("#warning_msg").html("Login first!");
-		var warning = document.getElementById('warning_msg');
-		warning.scrollIntoView();
-	});*/
-
+//Initialize two elements
 var exercise = document.getElementById('main_page_menu');
 var warning = document.getElementById('warning_msg');
 
+//Warning message function 
 function add_warning(){
+
+//Change the content of the text
 	warning.innerHTML = "Login first!";
+
+//Scroll to the text
 	warning.scrollIntoView();
 	
 }
 
+//Execute the function, when the mouse is over the element
 exercise.addEventListener('mouseover',function(){setTimeout(add_warning,1000)},false);
 
