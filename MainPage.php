@@ -1,8 +1,10 @@
 <?php
+#Start the session
     session_start();
     $_SESSION['alert']="Login first!";
     $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'Login first!';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
-    
+ 
+#Check if the user is logged in. 
     if(!$_SESSION['id']){
 	header('location:index.php');
 
@@ -107,9 +109,7 @@
 				
 <!--Add dscription from for the page-->
 					
-				<!--<div id="information_msg" class="mt-4 item_color">
-					   <textarea id="inner_information_msg" class="form-control " rows="3"></textarea>
-				</div>-->
+				
 				
 				<div id="information_msg" class="alert mt-4  alert-info item_shadow ">
 					   <div id="inner_information_msg" class="form-control alert alert-info " rows="3"></div>
@@ -185,20 +185,22 @@ description button as it mentions before.
 
 					<div id = "page_two" class="">
 						
-				        <div id = "page_two_1 " class='form-group  ' >
+<!--Load the vulnerable code image-->	
+				        <div id = "page_two_1 " class='form-group' >
 							
-							<label id="img_description_1" class = 'form-control font-weight-bold item_color text_color_2 item_shadow'>This is the vulnerable code</label>
+												<label id="img_description_1" class = 'form-control font-weight-bold item_color text_color_2 item_shadow'>This is the vulnerable code</label>
 							
 							<div id="close_btn_div_1" class="alert item_color ">
 								<button id = "close_btn_1"class="close mb-3 text-light item_color" type = "button">&times;</button>
 								<img id='xss_vul_image' class = 'form-control item_color item_shadow' src="items/xss_vul_code.png" alt='img1' >
 							</div>
 						</div>
-						
+
+<!--Load the protected code image-->						
 						<div id = "page_two_2 " class='form-group ' >
 							
 							<label id="xss_solution_label" class = 'form-control font-weight-bold mt-5 item_color text_color_2 item_shadow'>This is the protected code</label>
-							
+	
 							<div id="close_btn_div_2"  class="alert  close_btn_div item_color">
 								<button id = "close_btn_2" class="close mb-3 text-light close_btn item_color" type = "button">&times;</button>
 								<img id='xss_solution_image' class = 'form-control item_color item_shadow' src="items/xss_safe_code.png" alt='img2' >
@@ -212,7 +214,8 @@ description button as it mentions before.
 					
 <!--Third page loaded-->
 					<div id="page_three" class='form-group  item_color p-4 mb-5 border-light item_shadow' >
-						
+
+<!--Login form, for SQL injection-->						
 						<form id="sql_form" action="pages/sql_injection_page.php" method="post" >
 							<label class="form-control text-light item_color item_shadow">User ID:</label>
 					        <input id="user_id" name="user_id" type="text" class="form-control item_shadow bg-secondary text-light">
@@ -221,6 +224,7 @@ description button as it mentions before.
 							<button type="submit" class="btn btn-info item_shadow item">Submit</button>
 						</form>
 						
+<!--Load the user data, after he logged in-->
 						<p class="form-control item_shadow item_color text-light mt-4">
 							<?php 
 							      echo "Your User ID is:". $_SESSION["user_id"]."<br>";
@@ -237,8 +241,10 @@ description button as it mentions before.
 
 <!--Fourth page-->
 					<div id="page_four" class='form-group  border-light mb-4'>
+					
+<!--Load the target code into the text area-->	
 						<form id = "form_item_1" class = "form-group ">
-							
+
 					      	<label class="form-control font-weight-bold item_color text_color_2 item_shadow">This is the target code for the SQL injection</label>
 						    <textarea id = "input_sql_msg" class="form-control item_color_text bg-secondary item_shadow text-light " rows="20">
 							</textarea>
@@ -246,6 +252,7 @@ description button as it mentions before.
 
 					    </form>
 						
+<!--Load the solution code image-->							
 						<div id = "page_four_solution" class='form-group mt-5  mb-5 '>
 							
 							<label id="img_description_2" class="form-control font-weight-bold item_color text_color_2 item_shadow">This is the secure code</label>
@@ -256,6 +263,7 @@ description button as it mentions before.
 						    
 						</div>
 						
+<!--Load the new, secure login form-->
 						<div id = "page_four_solution_2" class='form-group mt-5 item_color p-4 mb-5 border-light item_shadow'>
 							
 							<form id="safe_sql_form" action="pages/safe_sql_injection_page.php" method="post" >
@@ -266,7 +274,7 @@ description button as it mentions before.
 							    <input id="safe_password" name="safe_password" type ="password" class="form-control item_shadow bg-secondary mb-4 text-light">
 								
 							    <button type="submit" class="btn btn-info item_shadow ">Submit</button>
-								
+<!--Load the user data-->								
 							   <p class="form-control item_shadow item_color text-light mt-4">
 								<?php 
 							      echo "Your User ID is:". $_SESSION["user_id"]."<br>";
@@ -357,9 +365,10 @@ if you don't know the answer.
 	<script src="js/img_full_screen_script.js"></script>
 	
 
-	
+<!--Load external functions-->
     <?php  echo $_SESSION["script"].$_SESSION["script1"].$_SESSION["script2"].$_SESSION["script3"];?>
-	
+
+<!--Remove the functions values, when the page restarted-->
 	<?php $_SESSION["script"] =""; $_SESSION["script1"] =""; $_SESSION["script2"] =""; $_SESSION["script3"] ="";?>
 	<?php $_SESSION['newscript'] = ''?>
 
