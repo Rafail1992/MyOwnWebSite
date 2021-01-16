@@ -25,7 +25,7 @@ if(empty($user_id) || empty($psw)){
 }
 
 //create a connection with the database
-$conn = new mysqli("sql101.epizy.com", "epiz_27368706", "TI4qfAS8Hsege4M", "epiz_27368706_002");
+$conn = new mysqli("HOST", "USERNAME", "PASSWORD", "DATABASE");
 //$conn = new mysqli("localhost","root","","users");
 //return a message when there is an error
 if(mysqli_errno()){
