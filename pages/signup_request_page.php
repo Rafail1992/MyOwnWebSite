@@ -22,6 +22,13 @@ $email            = htmlspecialchars($email);
 //Make a connection with the database(for security reasons, the connection data are fake )
 $conn = new mysqli("Host", "Usrname", "Usrpassword", "Database");
 
+//Check for connection errors
+if(mysqli_errno()){
+    // Echo error for connection errors
+	echo "error";
+    
+}
+
 //Chech for empty input fields
 if(empty($username) || empty($password) || empty($email) || empty($password_confirm)){
      //if it is empty, go back to the index file
@@ -91,14 +98,6 @@ if($checker_2){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-//Check for connection errors
-if(mysqli_errno()){
-    // Echo error for connection errors
-	echo "error";
-    
-}
 
 
 
