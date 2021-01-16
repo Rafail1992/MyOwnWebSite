@@ -1,29 +1,37 @@
 // JavaScript Document
+//Initialize the canva element
 var canvas = document.getElementById("msg_canvas");
+
+//Store the width and height 
 var width  = canvas.width;
 var height = canvas.height;
 
+//Division the width and height with the number 2
 width = width/2;
 height = height/2;
 
+
 canvas.scrollIntoView;
 
+//Set the width and height of the canvas
 $("#width").html(width);
 $("#height").html(height);
-var ctx = canvas.getContext("2d");
 
+
+var ctx = canvas.getContext("2d");
 var x = 50;
 var y = 100;
 
-
-
-
+//Animation function
 function msg_animation(){
-	  
+	
+//check the length of the scrolling
 	var scroll_height = window.scrollY;
 	  
+//If the scrolling is higher than 800 
 	  if(scroll_height > 800){
 		  
+//Prevent the text from rolling more than it needs
 		  if(x<700){
 			  
 	          ctx.clearRect(0,0,1000,400);
@@ -52,8 +60,6 @@ function msg_animation(){
 	
 }
 
-
-
-
+//Acivate the function
 document.addEventListener("scroll",function(){setInterval(msg_animation,200)},false);
 
