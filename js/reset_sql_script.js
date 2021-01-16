@@ -1,4 +1,5 @@
 // JavaScript Document
+//Reset the values for the sql injection text area
 $(document).ready(function(){
 	$('#reset_sql_btn').on('click',function(){
 		$('#input_sql_msg').val("\n//Insert valuers from sql injection form\n$user_id = $_POST['user_id'];\n$psw     = $_POST['password'];\n\n//Remove white spaces\n$user_id = trim($user_id);\n$psw     = trim($psw);\n\n//check for empty inputs\nif(empty($user_id) || empty($psw)){\n	header('location:../index.php');\n}\n\n//create a connection with the database\n$conn = new mysqli('localhost','root','','users');\n//return a message when there is an error\nif(mysqli_errno()){\n	echo 'there was an error with the connection';\n	header('location:../index.php');\n}\n//create a query\n$query = 'SELECT user_ID, name, surname, credit_card_ID FROM users WHERE user = ''.$user_id.'' AND psw = ''.$psw.''';\n//prepare the connection with the database\n$stmt =  $conn -> prepare($query);\n//execute the query\n$stmt -> execute();\n//store the result of the execution\n$stmt -> store_result();\n\n$stmt -> bind_result($usr_id,$usr_name,$usr_surname,$usr_cd_id);\n//export the stored data\n$stmt ->fetch();");
