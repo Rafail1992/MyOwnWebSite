@@ -1,57 +1,66 @@
 <?php
 session_start();
-
+//Insert data from index page
 $username         = $_POST['username'];
 $password         = $_POST['password'];
 
-
+//Remove the spaces from the inserted data
 $username         = trim($username);
 $password         = trim($password);
 
-
+//Prevent the special characters execution
 $username         = htmlspecialchars($username);
 $password         = htmlspecialchars($password);
 
-
+//Check if there is an empty username or password
 if(empty($username) || empty($password) ){
+	//if there is an empty username or password  go back to the index page
 	header("Location:../index.php");
     exit;
 }
+//Make a connection with the database(for security reasons, the connection data are fake )
+$conn = new mysqli("Host", "Usrname", "Usrpassword", "Database");
 
-$conn = new mysqli("sql101.epizy.com", "epiz_27368706", "TI4qfAS8Hsege4M", "epiz_27368706_002");
-
+//Check for connection errors
 if(mysqli_errno()){
+    // Echo error for connection errors
 	echo "error";
-    exit;
+    
 }
 
-//create a query
-//$query = "SELECT user_ID, name, surname, credit_card_ID FROM users WHERE user = '".$user_id."' AND psw = '".$psw."'";
+//Create a query
 $query = "SELECT userID, email FROM Names WHERE user = ? AND password = ? ";
-//prepare the connection with the database
+//Prepare the connection with the database
 $stmt =  $conn -> prepare($query);
-//add values to the prepared parameters
+//Add values to the prepared parameters
 $stmt -> bind_param('ss',$username ,$password);
-//execute the query
+//Execute the query
 $stmt -> execute();
-//store the result of the execution
+//Store the result of the execution
 $stmt -> store_result();
-
+//Store the result as a parameter
 $stmt -> bind_result($usr_id,$usr_email);
-//export the stored data
+//Export the stored data
 $stmt ->fetch();
 
+//Create a new session with the user ID
 $_SESSION['id'] = $usr_id;
 
+//Check if the user ID don't exist
    if(!$_SESSION['id']){
+	    //Create a session with a new alert message
         $_SESSION['alert']="Wrong Password or Username!";
+		//Show the alert window and change its content
         $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'Wrong Password or          Username!';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
-        header("location:../index.php");
+        //Go back to the index file
+		header("location:../index.php");
         exit;
    }
+   //Close the connnection with the database
+   $stmt ->close();
 
-   
+   //Go to the MainPage file
    header("location:../MainPage.php");
  
-$stmt ->close();
+
 ?>
