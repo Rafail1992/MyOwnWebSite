@@ -49,12 +49,19 @@ session_start();
 <!--Header right-->
 				
 				<div id="second_nav" class="col-sm-12 ">
+				
+				<!--Add a navigation bar-->
 					<nav class="navbar-expand-sm">
 						<ul class="navbar-nav mr-2 m-3 justify-content-center nav-tabs">
+						<!--Link to the home page-->
 							<li class="nav-item"><a href="index.php" class="nav-link font-weight-bold text-shadows"><h4>HOME</h4></a></li>
+							<!--Link to the Vulnerability page-->
                             <li class="nav-item"><a href="MainPage.php" class="nav-link font-weight-bold"><h4>EXERCISES</h4></a></li>
+							<!--Link to the CV-->
 					        <li class="nav-item"><a href="cv_page.php" class="nav-link font-weight-bold"><h4>BIOGRAPHY</h4></a></li>
+							<!--Link to the  page login section-->
 							<li class="nav-item"><a href="#login_page" class="nav-link font-weight-bold"><h4>LOGIN</h4></a></li>
+							<!--Link to the  page contact section-->
 					        <li class="nav-item"><a href="#contact_page" class="nav-link font-weight-bold"><h4>CONTACT</h4></a></li>
 					   </ul>
 			      </nav>
@@ -119,10 +126,13 @@ session_start();
 				<div class="row">
 					
 					<div class="col-xl-3">
+<!--Profile image-->
 						<img id = 'profil_pic' src="images/rafail.jpg" alt="profil pic" style = "width: 200px;">
 					</div>
 					
+<!--Personal information-->
 					<div class="col-xl-9">
+					    
 						<h4>Web Developer / Security Engineer</h4>
 						<br>
 						<p class="text-justify pl-2 pr-5">I started my journey in 2011 with my degree. I learned many things during my Undergraduate studies. I worked with Linux software like Ubuntu and Kali and learned languages like                           JavaScript, C, C++, and Java. <br>During my master's degree, I studied information security and computer forensics and I learned about secure software development, secure design of networks and the General Data                            Protection Regulation. My dissertation was about Analysis and implementation of Web Application Penetration Test and reporting on an online website. <br>Today I am studying web development, various languages and frameworks such as Python, JavaScript, HTML, SQL, React, CSS, PHP, and Bootstrap.
@@ -132,7 +142,7 @@ session_start();
 				</div>
 				
 			</div>
-			
+<!--Contact information-->
 			<div class="col-lg-5 pl-5">
 				<h4>Contact</h4>
 				<pre class="mt-4"><b>Full Name: </b>Rafail Dardagiannopoulos
@@ -357,7 +367,7 @@ session_start();
 			</div>			
 			
 				
-<!---->
+<!--Programming skills diagrammes-->
 			<div class = "col-md-6 mt-3">
 				<h2 class = "mb-4">Programming languages, libraries</h2>
 				<hr>
@@ -423,6 +433,7 @@ session_start();
                 <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%"> Node.js</div>
 				</div>
 				
+<!--Frameworks skills diagrammes-->
 				<div >
 					<hr class = "mt-5">
 				<h2 class = "mb-4">Frameworks and tools</h2>
@@ -561,7 +572,8 @@ session_start();
 <!-- Start of Row4 -->
 		
 		<div class="mt-4">
-			
+		
+<!--Skills and Certifications diagrammes-->		
 		<h2 class = pb-3>Other Skills and Certifications</h2>
 		<hr>
 		
@@ -591,12 +603,13 @@ session_start();
                   </div>
 				  
 			  </div>
-			  
+			
+<!--Certification list-->			
 			  <div class="col-md-6 mt-4">
 				  
 				  <h3>Certifications</h3>
 				  
-				  
+<!--First certification-->
 				  <div class="row">
 					<div class="col-md-6 mt-4">
 						<h3>University of Piraeus</h3>
@@ -614,7 +627,8 @@ session_start();
 						
 					</p>
 				</div>
-				  
+	
+<!--Second certification-->	
 				<div class="row">
 					<div class="col-md-6 mt-4">
 						<h3>University of Piraeus</h3>
@@ -650,6 +664,7 @@ session_start();
 					</p>
 				</div>
 				  
+<!--Third certification-->
 				  <div class="row">
 					<div class="col-md-6 mt-4">
 						<h3>LRN Learing Resource Network</h3>
@@ -725,7 +740,7 @@ session_start();
 				
             </div>
 			
-<!---->
+<!--Login Section-->
 			<div id="login_jumbo" class="jumbotron  col-md-6">
                 <h2 id = "login_page" class="text-center">LOGIN</h2>
                 <div class="card mt-5">
@@ -744,7 +759,7 @@ session_start();
 				</div>
              </div>
 
-<!---->
+<!--Include the sign_up_page and the window alert page to the main document-->
 			
 			<?php include("pages/sign_up_page.php"); ?>
 			<?php include("pages/alert_window_page.php")?>
@@ -752,7 +767,7 @@ session_start();
 <!-- End of  login card-->
 			
 		</div>
-
+<!--Add a go to the top button-->
 	<div class="jumbotron-fluid">
 	  <div class="row">
 			<div class = "col-12 justify-content-end d-flex">
@@ -767,7 +782,8 @@ session_start();
 				</button>
 				</a>
 			</div>
-		  
+			
+<!--Add the copyrights of the page-->
 			<div id="copyrights" class="copyright mt-3 col-12 mb-3">&copy;2021 - <strong>Rafail Dardagiannopoulos - Alexandreia, Greece</strong></div>
 	  </div>
 <!--Close container division-->
@@ -779,8 +795,12 @@ session_start();
 	<script src ="js/front_page_canvas_script.js"></script>
 	<script src="js/change_login_signup_script.js"></script>
 	<script src="js/close_pop_up_script.js"></script>
+	
+<!--Call hide and newscript function when it needed-->
     <?php echo $_SESSION['hide'];?>
     <?php echo $_SESSION['newscript']; ?>
+	
+<!--Remove the values of the function when the page reloaded-->
 	<?php $_SESSION['alert'] = ''?>
     <?php $_SESSION['newscript'] = ''?>
 </body>
