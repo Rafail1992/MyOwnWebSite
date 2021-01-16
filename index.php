@@ -47,19 +47,28 @@
 <!--Header right-->
 				
 				<div id="second_nav" class="col-sm-12 ">
+				
+				<!--Add a navigation bar-->
 					<nav class="navbar-expand-sm">
 						<ul class="navbar-nav mr-2 m-3 justify-content-center nav-tabs">
+						<!--Link to the home page-->
 							<li class="nav-item"><a href="index.php" class="nav-link font-weight-bold text-shadows"><h4>HOME</h4></a></li>
-                            <li  class="nav-item"><a href="MainPage.php" class="nav-link font-weight-bold"><h4 id = "main_page_menu">EXERCISES</h4></a></li>
+							<!--Link to the Vulnerability page-->
+                            <li class="nav-item"><a href="MainPage.php" class="nav-link font-weight-bold"><h4>EXERCISES</h4></a></li>
+							<!--Link to the CV-->
 					        <li class="nav-item"><a href="cv_page.php" class="nav-link font-weight-bold"><h4>BIOGRAPHY</h4></a></li>
+							<!--Link to the  page login section-->
 							<li class="nav-item"><a href="#login_page" class="nav-link font-weight-bold"><h4>LOGIN</h4></a></li>
+							<!--Link to the  page contact section-->
 					        <li class="nav-item"><a href="#contact_page" class="nav-link font-weight-bold"><h4>CONTACT</h4></a></li>
 					   </ul>
 			      </nav>
 				</div>
 				
 				<div class="col-12 p-2 w-10">
-			
+					
+
+				
 					
 <!--The carousel of the main page-->
 					
@@ -77,15 +86,18 @@
 <!--Carousel slider-->
 						
 						<div class="carousel-inner">
-							
+
+<!--Active carousel item-->
 							<div class="carousel-item active">
 								<img src="images/hacker_1280_480.png" alt="home_img" width ="600" class="img_carousel">
 							</div>
-							
+
+<!--Second carousel item-->							
 							<div class="carousel-item">
 								<img src="images/document_1280_480.png" alt="bio_img" class="img_carousel">
 							</div>
 							
+<!--Third carousel item-->
 							<div class="carousel-item">
 								<img src = "images/contact_1280_480.png" alt="contact_img" class="img_carousel">
 							</div>
@@ -177,7 +189,7 @@ and learn
 				
 			</div>
 			
-<!--Button to go to the -->
+<!--Button to go to the main website -->
 			<div class="col-md-4 mt-5">
 				<h3 class="font-weight-normal text-center"><a href="MainPage.php">WEBSITE</a></h3>
 				<div class="alert alert-primary alert_msg mt-5 alert_msg_holder" >
@@ -187,6 +199,7 @@ and learn
 				</div>
 			</div>
 			
+<!--Rolling message canvas-->
 			<div class="col-12 mt-5">
 				<canvas id="msg_canvas" width ="1000" height = "400" class="ml-auto mr-auto"></canvas>
 				
@@ -241,7 +254,7 @@ and learn
 				
             </div>
 			
-<!---->
+<!--Login section-->
 			<div id="login_jumbo" class="jumbotron col-md-6">
                 <h2 id = "login_page" class="text-center">LOGIN</h2>
                 <div class="card mt-5">
@@ -260,7 +273,7 @@ and learn
 				</div>
              </div>
 
-<!---->
+<!--Include the sign_up_page and the window alert page to the main document-->
 			
 			<?php include("pages/sign_up_page.php"); ?>
 			<?php include("pages/alert_window_page.php");?>
@@ -270,7 +283,8 @@ and learn
 <!-- End of  login card-->
 			
 		</div>
-
+		
+<!--Add a go to the top button-->
 	<div class="jumbotron-fluid ">
 		<div class="row">
 			<div class = "col-12 justify-content-end d-flex">
@@ -285,7 +299,8 @@ and learn
 				</button>
 				</a>
 			</div>
-		  
+			
+<!--Add the copyrights of the page-->
 			<div id="copyrights" class="copyright mt-3 col-12 mt-3">&copy;2021 - <strong>Rafail Dardagiannopoulos - Alexandreia, Greece</strong></div>
 	  </div>
 <!--Close container division-->
@@ -297,8 +312,12 @@ and learn
 	<script src ="js/front_page_canvas_script.js"></script>
 	<script src="js/change_login_signup_script.js"></script>
 	<script src="js/close_pop_up_script.js"></script>
+	
+<!--Call hide and newscript function when it needed-->
     <?php echo $_SESSION['hide'];?>
     <?php echo $_SESSION['newscript']; ?>
+	
+<!--Remove the values of the function when the page reloaded-->
 	<?php $_SESSION['alert'] = ''?>
     <?php $_SESSION['newscript'] = ''?>
 	
