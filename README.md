@@ -1,5 +1,6 @@
 # MyOwnWebSite
-This is my one Website code. I upload the down to make some changes and check how the github works.
+This is my one Website code. I upload the down to make some changes and check how the GitHub works.
+I used Javascript, jQuery, PHP, MYSQL, AJAX, Bootstrap, and Dreamweaver to build this Webpage.
 ###
 ## `Preivew`
 ### 
