@@ -20,4 +20,4 @@ I used Javascript, jQuery, PHP, MYSQL, AJAX, Bootstrap, and Dreamweaver to build
 ![ScreenShot](https://github.com/Rafail1992/MyOwnWebSite/blob/main/9.jpg)
 ##
 ###Added new user banner
-![ScreenShoot](https://github.com/Rafail1992/MyOwnWebSite/blob/main/10.jpg)
+![ScreenShoot](https://github.com/Rafail1992/MyOwnWebSite/blob/main/10.png)
