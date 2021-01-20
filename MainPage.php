@@ -58,15 +58,20 @@
 						<span class="fas fa-bars"></span>
 					</button>
 					
-					<div class = "collapse navbar-collapse" id = "collapse_navbar">
+					<div class = "col-8 col-md-4 collapse navbar-collapse" id = "collapse_navbar">
 						<ul class="navbar-nav nav-tabs">
 <!-- Help button-->         
                             <li class="nav-item "><a href="index.php" class="nav-link  text_color_1 font-weight-bold">Home</a></li>
                             <li class="nav-item "><a href="cv_page.php" class="nav-link  text_color_1 font-weight-bold">Biography</a></li>
 							<li id="help_btn" class="nav-item "><a href="#" class="nav-link  text_color_1 font-weight-bold">Solution</a></li>
 						    <li id="description_btn" class="nav-item"><a href="#pop_up_help" class="nav-link  text_color_1 font-weight-bold">Description</a></li>
+                            
 				        </ul>
 			        </div>
+                    <div  class =" col-4 col-md-8 mt-3 d-none d-xl-block">
+                            <h5 class ="d-flex justify-content-end text_color_1 d-none ">USER: <span class ="badge badge-warning ml-3"><?php echo strtoupper($_SESSION['name']);?><span></h5>
+                    </div>
+                    
 			    </nav>
 				
 			</div>

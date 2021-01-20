@@ -19,7 +19,7 @@ if(empty($username) || empty($password) ){
     exit;
 }
 //Make a connection with the database(for security reasons, the connection data are fake )
-$conn = new mysqli("Host", "Usrname", "Usrpassword", "Database");
+$conn = new mysqli("sql101.epizy.com", "epiz_27368706", "TI4qfAS8Hsege4M", "epiz_27368706_002");
 
 //Check for connection errors
 if(mysqli_errno()){
@@ -45,6 +45,7 @@ $stmt ->fetch();
 
 //Create a new session with the user ID
 $_SESSION['id'] = $usr_id;
+$_SESSION['name'] = $username;
 
 //Check if the user ID don't exist
    if(!$_SESSION['id']){
