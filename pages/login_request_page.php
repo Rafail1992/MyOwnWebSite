@@ -19,7 +19,7 @@ if(empty($username) || empty($password) ){
     exit;
 }
 //Make a connection with the database(for security reasons, the connection data are fake )
-$conn = new mysqli("sql101.epizy.com", "epiz_27368706", "TI4qfAS8Hsege4M", "epiz_27368706_002");
+$conn = new mysqli("host", "user", "password", "database");
 
 //Check for connection errors
 if(mysqli_errno()){
