@@ -149,7 +149,8 @@ session_start();
 <b>Location: </b> 4 Nikolaou Plastira 
            Alexandreia
            Greece
-<b>LinkedIn: </b><a href ="www.linkedin.com/in/rafaildardagiannopoulos"> www.linkedin.com/in/rafaildardagiannopoulos</a>
+<b>LinkedIn: </b><a href ="https://www.linkedin.com/in/rafaildardagiannopoulos/"> www.linkedin.com</a>
+<b>GitHub: </b><a href ="https://github.com/Rafail1992/Rafail1992.github.io">   www.github.com</a>
 <b>Tel.: </b>     +30 6955047835
 <b>Email: </b>    rafaildardagiannopoulos@gmail.com
 		  </pre>
@@ -283,7 +284,7 @@ session_start();
 				<div>
 					<span class="badge badge-secondary p-2 mt-3">Training Courses</span>
 					<p class="mt-4">
-						<b>Field of study:</b> PRIVATE SECURITY STAFF TRAINING<br>
+						<b>Field of study:</b> Private security staff training<br>
 						
 						
 					
@@ -679,7 +680,7 @@ session_start();
 					<span class="badge badge-secondary p-2 mt-3">English</span>
 					<p class="mt-4">
 						<b>Certificae Title: </b>LRN Level 3 Certificate in ESOL Iternational (CEF C2)<br>
-						<b>Greade: </b>DISTINCTION
+						<b>Greade: </b>Distinction
 					</p>
 				</div>
 				  
