@@ -113,7 +113,12 @@ $stmt -> execute();
 //Close the connection with the database
 $stmt ->close();
 //Head to the Main page
-   header("location:../MainPage.php");
+  //Head to the index
+
+   header("location:../index.php");
+    $_SESSION['newscript']="<script>$('#pop_up_help').show();var exercise = document.getElementById('main_page_menu');var warning = document.getElementById('warning_msg');function add_warning(){warning.innerHTML = 'Thanks for your Sign Up';warning.scrollIntoView();}window.addEventListener('load',add_warning,false);</script>";
+    exit;
+
  
 
 ?>
