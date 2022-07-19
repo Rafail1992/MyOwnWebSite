@@ -2,7 +2,7 @@
 This is my one Website code. I upload the down to make some changes and check how the GitHub works.
 I used Javascript, jQuery, PHP, MYSQL, AJAX, Bootstrap, and Dreamweaver to build this Webpage.
 ###
-## `Preivew`
+## `Preview`
 ### 
 ### The main page
 ![ScreenShot](https://github.com/Rafail1992/MyOwnWebSite/blob/main/1.jpg)
